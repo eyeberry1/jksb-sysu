@@ -22,8 +22,8 @@ jobs:
 
     - name: jksb
       env:
-        NETID: ${{secrets.ZHENGBW7}}
-        PASSWORD: ${{secrets.DESER9V63ED}}
+        NETID: ${{secrets.NETID}}
+        PASSWORD: ${{secrets.PASSWORD}}
         PYTHONIOENCODING: utf-8
         PYTHONLEGACYWINDOWSSTDIO: utf-8
       run: python jksb_sysu.py
