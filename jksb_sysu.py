@@ -96,16 +96,7 @@ def jksb(driver):
     logging.info("可以咯，提交健康申报")
     
     driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
-    
-        try:
-        result = driver.find_element(By.XPATH, '//div[8]/div/div[1]/div[2]').text
-        print("完成健康申报")
-        return f'{number}: {result}'
-    except:
-        print('提交健康申报失败')
-        raise('提交健康申报失败')
-    
-    
+
     result=""
     try:
         wait.until(expected_conditions.text_to_be_present_in_element
@@ -116,8 +107,6 @@ def jksb(driver):
         logging.error("办理健康申报失败")
         logging.error(driver.find_element_by_xpath('//div[8]').text)
         raise Exception('办理健康申报失败')
-
-    
 
     return result
 
@@ -131,4 +120,3 @@ if __name__ == "__main__":
     login(driver,ocr)
     jksb(driver)
     driver.quit()
-
